@@ -3,11 +3,16 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Compon1 from './components/Components1'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <App name="anupam" />
+    <App name="abc" />
+    <App name="anuj" />
+    <App name="hero" />
+    <Compon1 />
   </React.StrictMode>
 );
 
