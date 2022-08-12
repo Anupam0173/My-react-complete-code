@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Compon1 from './components/Components1'
-
+import Example from './components/Button'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -13,6 +13,7 @@ root.render(
     <App name="anuj" />
     <App name="hero" />
     <Compon1 />
+    <Example />
   </React.StrictMode>
 );
 
