@@ -1,5 +1,5 @@
 import React, {Fragment, useRef} from 'react';
-
+import User from './components/User';
 function App() {
 
 // Creating a ref object using useRef hook
@@ -17,11 +17,7 @@ return (
 		ACTION
 		</button>
 	</div>
-	<label>
-	Click on the action button to
-	focus and populate the text.
-	</label><br/>
-	<textarea ref={focusPoint} />
+  <User ref = {focusPoint}></User>
 	</Fragment>
 );
 };
