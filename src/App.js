@@ -1,38 +1,29 @@
-import React, { useReducer } from "react";
+import React, {Fragment, useRef} from 'react';
 
-// Defining the initial state and the reducer
-const initialState = 0;
-const reducer = (state, action) => {
-  console.log("-------Action.log------------", action);
-  switch (action) {
-    case "add":
-      return state + 1;
-    case "subtract":
-      return state - 1;
-    case "reset":
-      return 0;
-    default:
-      throw new Error("Unexpected action");
-  }
+function App() {
+
+// Creating a ref object using useRef hook
+const focusPoint = useRef(null);
+const onClickHandler = () => {
+	focusPoint.current.value =
+	"The quick brown fox jumps over the lazy dog";
+	focusPoint.current.focus();
+  focusPoint.current.style.color = "red";
 };
-
-const App = () => {
-  // Initialising useReducer hook
-  const [count, dispatch] = useReducer(reducer, initialState);
-  return (
-    <div>
-      <h2>{count}</h2>
-      <button onClick={() => dispatch("add")}>
-        add
-      </button>
-      <button onClick={() => dispatch("subtract")}>
-        subtract
-      </button>
-      <button onClick={() => dispatch("reset")}>
-        reset
-      </button>
-    </div>
-  );
+return (
+	<Fragment>
+	<div>
+		<button onClick={onClickHandler}>
+		ACTION
+		</button>
+	</div>
+	<label>
+	Click on the action button to
+	focus and populate the text.
+	</label><br/>
+	<textarea ref={focusPoint} />
+	</Fragment>
+);
 };
 
 export default App;
