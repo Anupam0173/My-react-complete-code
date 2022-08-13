@@ -3,7 +3,7 @@ import React, { useReducer } from "react";
 // Defining the initial state and the reducer
 const initialState = 0;
 const reducer = (state, action) => {
-  console.log("-------Action.log------------", action.state);
+  console.log("-------Action.log------------", action);
   switch (action) {
     case "add":
       return state + 1;
