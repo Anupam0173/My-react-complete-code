@@ -1,20 +1,19 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 
-function About() {
+function Login() {
   return (
     <>
         <nav>
             <Link to="/">Home</Link> |{" "}
             <Link to="/about">About</Link> |{" "}
             <Link to="/dashboard">Dashboard</Link> |{" "}
-            <Link to="/:mouse/:99">product</Link> |{" "}
-            <Link to="/login">Login</Link> |{" "}
+            <Link to="/:mobile/:89">product</Link> |{" "}
             <Link to="/404">Nopage</Link>
         </nav>
-        <div>About</div>
+        <div>Login</div>
     </>
   )
 }
 
-export default About
+export default Login

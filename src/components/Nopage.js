@@ -10,6 +10,7 @@ function Nopage() {
             <Link to="/about">About</Link> |{" "}
             <Link to="/dashboard">Dashboard</Link> |{" "}
             <Link to="/:pen/:55">product</Link> |{" "}
+            <Link to="/login">Login</Link> |{" "}
             <Link to="/404">Nopage</Link>
         </nav>
         <div>Nopage</div>

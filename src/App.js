@@ -5,8 +5,11 @@ import Home from './components/Home'
 import Dashboard from './components/Dashboard'
 import Nopage from './components/Nopage'
 import Product from './components/Product'
+import Login from './components/Login'
+import { Navigate } from "react-router-dom";
 
 function App() {  
+	let is_LoggedIn = false
 	return (
 		<BrowserRouter>
 			<Routes>
@@ -14,7 +17,8 @@ function App() {
 				<Route path="/about/" element={<About />} />
 				<Route path="/:product/:id" element={<Product />} />
 				<Route path="/:404" element={<Nopage />} />
-				<Route path="/dashboard" element={<Dashboard />} />
+				<Route path="/login" element={<Login />} />
+				<Route path="/dashboard" element={ is_LoggedIn ? <Dashboard /> : <Navigate to="/login" replace={true} />} />
 			</Routes>
 		</BrowserRouter>
 	)
