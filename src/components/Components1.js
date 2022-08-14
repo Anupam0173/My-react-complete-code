@@ -1,11 +1,9 @@
 import React from 'react'
 import { UserContext } from '../App'
-
 export default function Compon1() {
+  const value = React.useContext(UserContext);  
   return (
-    <UserContext.Consumer>
-      {value => <h1>{value}</h1>}
-    </UserContext.Consumer>
+      <h1>Value is = {value}</h1>
   )
 }
     
