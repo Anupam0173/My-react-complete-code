@@ -10,6 +10,9 @@ import { Navigate } from "react-router-dom";
 
 function App() {  
 	let is_LoggedIn = false
+	let data = {
+		"message":"User not logged in"
+	}
 	return (
 		<BrowserRouter>
 			<Routes>
@@ -18,7 +21,7 @@ function App() {
 				<Route path="/:product/:id" element={<Product />} />
 				<Route path="/:404" element={<Nopage />} />
 				<Route path="/login" element={<Login />} />
-				<Route path="/dashboard" element={ is_LoggedIn ? <Dashboard /> : <Navigate to="/login" replace={true} />} />
+				<Route path="/dashboard" element={ is_LoggedIn ? <Dashboard /> : <Navigate to="/login" replace={true} state={data} />} />
 			</Routes>
 		</BrowserRouter>
 	)
