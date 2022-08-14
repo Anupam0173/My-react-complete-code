@@ -9,7 +9,7 @@ import Login from './components/Login'
 import { Navigate } from "react-router-dom";
 
 function App() {  
-	let is_LoggedIn = false
+	let is_LoggedIn = true
 	let data = {
 		"message":"User not logged in"
 	}

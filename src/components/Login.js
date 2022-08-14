@@ -1,8 +1,8 @@
 import React from 'react'
-import { Link, useLocation } from "react-router-dom";
+import { Link,useLocation } from "react-router-dom";
 
 function Login() {
-  let use_location = useLocation();
+  let use_location = useLocation()
   return (
     <>
         <nav>
@@ -13,7 +13,7 @@ function Login() {
             <Link to="/404">Nopage</Link>
         </nav>
         <div>Login</div>
-        <div>UseLocation:{use_location.state.message}</div>
+        <div>message : {use_location.state.message}</div>
     </>
   )
 }
