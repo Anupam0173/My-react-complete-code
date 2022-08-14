@@ -7,6 +7,7 @@ export default function Home() {
         <Link to="/">Home</Link> |{" "}
         <Link to="/about">About</Link> |{" "}
         <Link to="/dashboard">Dashboard</Link> |{" "}
+        <Link to="/:mobile/:89">product</Link> |{" "}
         <Link to="/404">Nopage</Link>
       </nav>
       <h1>Home</h1>

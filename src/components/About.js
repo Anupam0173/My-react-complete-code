@@ -8,6 +8,7 @@ function About() {
             <Link to="/">Home</Link> |{" "}
             <Link to="/about">About</Link> |{" "}
             <Link to="/dashboard">Dashboard</Link> |{" "}
+            <Link to="/:mouse/:99">product</Link> |{" "}
             <Link to="/404">Nopage</Link>
         </nav>
         <div>About</div>
