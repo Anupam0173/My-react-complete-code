@@ -1,7 +1,8 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useSearchParams } from "react-router-dom";
 
 export default function Product() {
     let params = useParams();
+    let [searchParams,setsearchParams] = useSearchParams();
     return (
         <div>
             <nav>
@@ -13,6 +14,8 @@ export default function Product() {
             </nav>
             <h1>Product name {params.product}</h1>
             <h1>Product id {params.id}</h1>
+            <h1>First Params: {searchParams.get("cat")}</h1>
+            <h1>Second Params: {searchParams.get("price")}</h1>
         </div>
     );
 }
