@@ -1,8 +1,11 @@
 import React from 'react'
+import { UserContext } from '../App'
 
-export default function Compon1(p) {
+export default function Compon1() {
   return (
-    <div>components1 {p.value}</div>
+    <UserContext.Consumer>
+      {value => <h1>{value}</h1>}
+    </UserContext.Consumer>
   )
 }
     

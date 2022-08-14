@@ -1,18 +1,13 @@
-import React,{ useState} from 'react'
+import React from 'react'
 import Compon1 from './components/Components1'
-function App() {
-  	// Declare a new state variable, which we'll call "count"
-	const [count, setCount] = useState(0);
-	const [middlevalue, setMiddleValue] = useState(500);
-	
+export const UserContext = React.createContext();
+
+function App() {  	
 	return (
-			<div>
-					<p>You clicked {count} times</p>
-					<button onClick={() => setCount(count + 1)}> initital increment </button>
-					<button onClick={() => setMiddleValue(middlevalue + 1)}> middle increment </button>
-					<Compon1 value={middlevalue}></Compon1>
-			</div>
-	);
+		<UserContext.Provider value="Reed">
+		  <Compon1 />
+		</UserContext.Provider>
+	  )
 }
 
 export default App
