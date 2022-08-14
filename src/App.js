@@ -1,13 +1,18 @@
 import React from 'react'
 import Compon1 from './components/Components1'
-export const UserContext = React.createContext();
 
 function App() {  	
+	const [data] = Compon1("https://jsonplaceholder.typicode.com/todos");
+
 	return (
-		<UserContext.Provider value="Reed">
-		  <Compon1 />
-		</UserContext.Provider>
-	  )
+		<>
+		  {data &&
+			data.map((item) => {
+			  return <p key={item.id}>{item.title}</p>;
+			})}
+		</>
+	  );
 }
 
 export default App
+

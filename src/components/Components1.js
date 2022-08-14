@@ -1,9 +1,14 @@
-import React from 'react'
-import { UserContext } from '../App'
-export default function Compon1() {
-  const value = React.useContext(UserContext);  
-  return (
-      <h1>Value is = {value}</h1>
-  )
+import { useState, useEffect } from "react";
+
+export default function Compon1(url) {
+
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => setData(data));
+  }, [url]);
+
+  return [data];
 }
-    
