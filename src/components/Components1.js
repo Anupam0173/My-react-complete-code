@@ -1,8 +1,8 @@
 import React from 'react'
 
-export default function Compon1() {
+export default function Compon1(p) {
   return (
-    <div>components1</div>
+    <div>components1 {p.value}</div>
   )
 }
     
