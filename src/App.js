@@ -1,25 +1,25 @@
-import React from 'react'
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import About from './components/About'
-import Home from './components/Home'
-import Nopage from './components/Nopage'
-import Product from './components/Product'
-import Product_Detail from './components/Product_Detail'
+import React, { useEffect } from 'react'
+import {incNumber, decNumber} from '../src/actions/index'
+import { useSelector, useDispatch } from "react-redux";
 
 function App() {  
 	
+	const changeTheNumber = useSelector(state => state.ChangeNumber);
+	const dispatch = useDispatch();
+
+	useEffect(() => {
+		console.log('num, ----' , changeTheNumber)
+	}, [changeTheNumber])
+
 	return (
-		<BrowserRouter>
-			<Routes>
-				<Route path="/" element={<Home />}>
-				<Route index element={<Product />} />
-				<Route path="about" element={<About />} />
-					<Route path="product" element={<Product />} >
-						<Route path=":product_cat/:id" element={<Product_Detail />} />
-					</Route>
-				</Route>
-			</Routes>
-		</BrowserRouter>
+		<>
+			<h1>Increment and Decrement Counter</h1>
+			<h1>Using Redux</h1>
+			<button className="btn btn-primary" onClick={()=> dispatch(incNumber(8))}>+</button>
+				<h1>{changeTheNumber}</h1>		
+			<button className="btn btn-primary" onClick={()=> dispatch(decNumber())}>-</button>
+		</>
+
 	)
 }
 
