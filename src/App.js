@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, { useState} from 'react'
 import List_todo from './components/List_todo'
 
 function App() {  
@@ -12,15 +12,17 @@ function App() {
 	const addtext = ()=>{
 		const all_todo = [...textArray, text]
 		setTextArray(all_todo)
-		console.log("==========>",all_todo)
 		setText('')
 	}
 
 	const handleDeletetext = (id)=>{
-		console.log("**********************Deletetext******************************");
-		textArray.splice(id,1)
-		setTextArray(textArray)
-		
+		// console.log("**********************Deletetext******************************");
+		const fresh_array = textArray.filter((todo,i)=>
+			{
+				return i!==id
+			}
+		)
+		setTextArray(fresh_array)
 	}
 
 
